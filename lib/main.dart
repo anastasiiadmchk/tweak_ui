@@ -9,7 +9,6 @@ void main() {
 class MyApp extends StatelessWidget {
   // This widget is the root of the application.
 
-  final int initPosition=0;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.green,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: Start(initPosition),
+      home: Start(),
     );
   }
 }
