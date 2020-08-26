@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:tweak/constants.dart';
@@ -16,12 +17,22 @@ class CardRow extends StatefulWidget {
 }
 
 class _CardRowState extends State<CardRow> {
+  List<Widget> cardSliders;
+
+  @override
+  void initState() {
+    cardSliders = widget.cardRow.map((item) => ServiceCard(item.title, item.path)).toList();
+    super.initState();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     //this gonna give us total height and with of our device
     return Container(
+      //margin: EdgeInsets.only(top: 10),
       child: Column(
         children: <Widget>[
           SizedBox(height: 15,),
@@ -35,6 +46,7 @@ class _CardRowState extends State<CardRow> {
                   style: TextStyle(
                     fontFamily: 'HKGrotesk-Bold',
                     fontSize: 20,
+                    fontWeight: FontWeight.bold,
                     color: kPrimaryColor,
                     height: 1,
                   ),
@@ -51,20 +63,19 @@ class _CardRowState extends State<CardRow> {
               ],
             ),
           ),
-          SizedBox(height: 5,),
-          Container(
-            padding: EdgeInsets.only(left: 20),
-            height: 200,
-            child: ListView.builder(
-              scrollDirection: Axis.horizontal,
-              itemCount: widget.cardRow.length,
-              itemBuilder: (BuildContext context, int i) {
-                return Transform.scale(
-                  scale: 1,
-                  child: ServiceCard(widget.cardRow[i].title,widget.cardRow[i].path),
-                );
-              },
+          SizedBox(height: 10,),
+          CarouselSlider(
+            options: CarouselOptions(
+              height: 210,
+              viewportFraction: 0.8,
+              enableInfiniteScroll: false,
+              initialPage: 0,
+              autoPlay: false,
+              //aspectRatio: 1.5,
+              enlargeCenterPage: true,
+              disableCenter: true,
             ),
+            items: cardSliders,
           ),
         ],
       ),

@@ -13,7 +13,8 @@ class ServiceCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       child: Card(
-        elevation: 3,
+        elevation: 10,
+        shadowColor: Colors.black26,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(23)),
         child: Container(
           width: 250,

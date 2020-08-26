@@ -12,6 +12,9 @@ class Welcome extends StatelessWidget {
   final List<ItemObject> cardRow1 = [
     ItemObject(path: 'assets/images/cards/haircut.jpg', title: 'Get a Haircut'),
     ItemObject(path: 'assets/images/cards/manicure.jpg', title: 'Manicure'),
+    ItemObject(path: 'assets/images/cards/haircut.jpg', title: 'Get a Haircut'),
+    ItemObject(path: 'assets/images/cards/haircut.jpg', title: 'Get a Haircut'),
+    ItemObject(path: 'assets/images/cards/haircut.jpg', title: 'Get a Haircut'),
   ];
   final List<ItemObject> cardRow2 = [
     ItemObject(path: 'assets/images/cards/kids.jpg', title: 'Solving Puzzle with Kids'),
